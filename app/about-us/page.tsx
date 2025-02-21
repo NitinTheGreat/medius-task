@@ -20,7 +20,7 @@ export default function AboutUs() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px]">
-              <Image src="/placeholder.svg" alt="Our story" fill className="object-cover rounded-lg" />
+              <Image src="/about.jpg" alt="Our story" fill className="object-cover rounded-lg" />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">Our Story</h2>
@@ -61,7 +61,7 @@ export default function AboutUs() {
             {team.map((member, index) => (
               <div key={index} className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4">
-                  <Image src="/placeholder.svg" alt={member.name} fill className="object-cover rounded-full" />
+                  <Image src="/about.jpg" alt={member.name} fill className="object-cover rounded-full" />
                 </div>
                 <h3 className="font-bold">{member.name}</h3>
                 <p className="text-gray-600">{member.role}</p>
