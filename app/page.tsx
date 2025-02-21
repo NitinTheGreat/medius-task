@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { Clock, Star } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -7,22 +7,50 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-50">
+      <section className="relative bg-[#004D40] min-h-screen flex items-center">
         <div className="container mx-auto px-4 py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">A smarter way to get a mortgage</h1>
-              <p className="text-xl text-gray-600">
-                Experience a faster, more transparent way to get a mortgage with better rates and zero fees.
-              </p>
-              <Button size="lg" asChild>
-                <Link href="/start">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 text-center lg:text-left">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-primary">
+                Mortgages
+                <br />
+                made simple
+              </h1>
+              <div className="space-y-4">
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
+                  asChild
+                >
+                  <Link href="/start">Start my approval</Link>
+                </Button>
+                <div className="flex items-center justify-center lg:justify-start space-x-2 text-primary">
+                  <Clock className="h-4 w-4" />
+                  <span className="text-sm">3 min | No credit impact</span>
+                </div>
+              </div>
             </div>
-            <div className="relative h-[400px]">
-              <Image src="/placeholder.svg" alt="Happy homeowners" fill className="object-cover rounded-lg" priority />
+            <div className="relative">
+              <Image
+                src="/hero.webp"
+                alt="Mobile app showing mortgage approval"
+                width={600}
+                height={800}
+                className="mx-auto"
+                priority
+              />
+              <div className="absolute bottom-0 right-0 bg-white rounded-lg p-3 shadow-lg flex items-center space-x-2">
+                <span className="text-sm font-medium">4.6 Stars</span>
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${i < 4 ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`}
+                    />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-600">3177 Google reviews</span>
+              </div>
             </div>
           </div>
         </div>
